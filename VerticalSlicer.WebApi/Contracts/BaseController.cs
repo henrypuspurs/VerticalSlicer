@@ -3,7 +3,7 @@
 namespace VerticalSlicer.WebApi.Contracts;
 
 [ApiController]
-[Route("[controller]")]
+[Route("v{version:apiVersion}/[controller]")]
 public abstract class BaseController : ControllerBase
 {
     

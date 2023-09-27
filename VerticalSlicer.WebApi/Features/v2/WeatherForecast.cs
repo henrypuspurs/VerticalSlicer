@@ -2,12 +2,12 @@ using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using VerticalSlicer.WebApi.Contracts;
 
-namespace VerticalSlicer.WebApi.Features;
+namespace VerticalSlicer.WebApi.Features.v2;
 
 public partial class WeatherForecastController
 {
     /// <summary>
-    /// The default weather endpoint
+    /// The default weather endpoint VERSION 2
     /// </summary>
     /// <returns>Some weather</returns>
     [HttpGet(Name = "GetWeatherForecast")]

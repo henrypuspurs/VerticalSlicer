@@ -1,4 +1,6 @@
-using System.Reflection;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.Extensions.DependencyInjection;
 using VerticalSlicer.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,25 +10,23 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options =>
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddApiVersioning(opt =>
 {
-    options.SwaggerDoc("v1", new()
-    {
-        Title = "Vertical Slice test project",
-        Version = "v1"
-    });
-
-    var currentAssembly = Assembly.GetExecutingAssembly();
-    var xmlDocs = currentAssembly.GetReferencedAssemblies()
-        .Union(new[] { currentAssembly.GetName() })
-        .Select(a => Path.Combine(Path.GetDirectoryName(currentAssembly.Location)!, $"{a.Name}.xml"))
-        .Where(File.Exists).ToArray();
-
-    Array.ForEach(xmlDocs, (d) =>
-    {
-        options.IncludeXmlComments(d);
-    });
+    opt.DefaultApiVersion = new ApiVersion(1, 0);
+    opt.AssumeDefaultVersionWhenUnspecified = true;
+    opt.ReportApiVersions = true;
+    opt.ApiVersionReader = ApiVersionReader.Combine(new UrlSegmentApiVersionReader());
 });
+
+builder.Services.AddVersionedApiExplorer(setup =>
+{
+    setup.GroupNameFormat = "'v'VVV";
+    setup.SubstituteApiVersionInUrl = true;
+});
+
+builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 
 builder.AddServices();
 
@@ -36,7 +36,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("v1/swagger.json", "VerticalSlicer v1");
+        c.SwaggerEndpoint("v2/swagger.json", "VerticalSlicer v2");
+    });
 }
 
 app.UseHttpsRedirection();
