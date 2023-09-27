@@ -10,22 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66130d62-d29e-4604-8246-5ab81e529eec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Contracts/BaseController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Contracts/IRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Contracts/IRequestHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Contracts/Response.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/DateTimeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Features/WeatherForecast.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Features/WeatherForecastController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VerticalSlicer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VerticalSlicer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VerticalSlicer.WebApi/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VerticalSlicer.WebApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VerticalSlicer.WebApi/VerticalSlicer.WebApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/VerticalSlicer.WebApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VerticalSlicer.WebApi/VerticalSlicer.WebApi.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/VerticalSlicer.WebApi.csproj.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VerticalSlicer.WebApi/WeatherForecast.cs" beforeDir="false" />
-    </list>
+    <list default="true" id="66130d62-d29e-4604-8246-5ab81e529eec" name="Changes" comment="added validation for requests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +139,7 @@
       <workItem from="1695739614313" duration="2455000" />
       <workItem from="1695742535413" duration="510000" />
       <workItem from="1695800823864" duration="717000" />
-      <workItem from="1695801595781" duration="5995000" />
+      <workItem from="1695801595781" duration="9357000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -212,7 +197,31 @@
       <option name="project" value="LOCAL" />
       <updated>1695742582096</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Initial implementation of vertical slice">
+      <option name="closed" value="true" />
+      <created>1695811104219</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695811104219</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Initial implementation of vertical slice">
+      <option name="closed" value="true" />
+      <created>1695811330036</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695811330036</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added validation for requests">
+      <option name="closed" value="true" />
+      <created>1695815207654</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695815207654</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +231,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Initial implementation of vertical slice" />
+    <MESSAGE value="added validation for requests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added validation for requests" />
   </component>
 </project>

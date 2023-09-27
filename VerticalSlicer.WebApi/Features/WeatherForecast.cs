@@ -1,3 +1,4 @@
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using VerticalSlicer.WebApi.Contracts;
 
@@ -11,17 +12,35 @@ public partial class WeatherForecastController
     /// <returns>Some weather</returns>
     [HttpGet(Name = "GetWeatherForecast")]
     public async Task<ActionResult<Response<IEnumerable<WeatherForecast.Model>>>> Get(
+        [FromQuery] WeatherForecast.Request request,
         [FromServices] WeatherForecast.Handler handler,
         CancellationToken cancellationToken)
     {
-        var response = await handler.Handle(new(), cancellationToken);
+        var response = await handler.Handle(request, cancellationToken);
         return Ok(response);
     }
 }
 
 public abstract class WeatherForecast
 {
-    public record Request;
+    public record Request
+    {
+        /// <summary>
+        /// This is the bool that will be shown
+        /// </summary>
+        [FromQuery]
+        public bool? ShowBool { get; init; }
+    }
+    
+    public class RequestValidator : AbstractValidator<Request>
+    {
+        public RequestValidator()
+        {
+            RuleFor(x => x.ShowBool)
+                .NotNull()
+                .WithMessage("ShowBool is required to be true or false");
+        }
+    }
 
     public sealed class Handler : IRequestHandler<Request, IEnumerable<Model>>
     {
@@ -51,21 +70,25 @@ public abstract class WeatherForecast
             {
                 Date = DateOnly.FromDateTime(_dateTimeService.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)],
+                ShowBool = request.ShowBool!.Value
+                    ? "true"
+                    : "false"
             });
 
             return new(result);
         }
     }
 
+    /// <summary>
+    /// The model returned from the weather endpoint
+    /// </summary>
     public record Model
     {
         public DateOnly Date { get; init; }
-
         public int TemperatureC { get; init; }
-
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-
         public string? Summary { get; init; }
+        public string? ShowBool { get; init; }
     }
 }
