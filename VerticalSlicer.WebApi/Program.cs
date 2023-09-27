@@ -1,3 +1,6 @@
+using System.Reflection;
+using VerticalSlicer.WebApi;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,7 +8,27 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new()
+    {
+        Title = "Vertical Slice test project",
+        Version = "v1"
+    });
+
+    var currentAssembly = Assembly.GetExecutingAssembly();
+    var xmlDocs = currentAssembly.GetReferencedAssemblies()
+        .Union(new[] { currentAssembly.GetName() })
+        .Select(a => Path.Combine(Path.GetDirectoryName(currentAssembly.Location)!, $"{a.Name}.xml"))
+        .Where(File.Exists).ToArray();
+
+    Array.ForEach(xmlDocs, (d) =>
+    {
+        options.IncludeXmlComments(d);
+    });
+});
+
+builder.AddServices();
 
 var app = builder.Build();
 

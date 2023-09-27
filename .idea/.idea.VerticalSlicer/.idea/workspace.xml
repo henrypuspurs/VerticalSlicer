@@ -10,14 +10,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66130d62-d29e-4604-8246-5ab81e529eec" name="Changes" comment="initial commit">
+    <list default="true" id="66130d62-d29e-4604-8246-5ab81e529eec" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Contracts/BaseController.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Contracts/IRequest.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Contracts/IRequestHandler.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Contracts/Response.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/DateTimeService.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/DependencyInjection.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Features/WeatherForecast.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Features/WeatherForecastController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VerticalSlicer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VerticalSlicer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VerticalSlicer.WebApi/Controllers/WeatherForecastController.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/VerticalSlicer.WebApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VerticalSlicer.WebApi/VerticalSlicer.WebApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VerticalSlicer.WebApi/VerticalSlicer.WebApi.csproj" afterDir="false" />
@@ -36,6 +38,9 @@
     <setting file="file://$PROJECT_DIR$/VerticalSlicer.WebApi/Features/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="SWEA" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -147,6 +152,9 @@
       <workItem from="1695735402264" duration="2249000" />
       <workItem from="1695737718501" duration="1847000" />
       <workItem from="1695739614313" duration="2455000" />
+      <workItem from="1695742535413" duration="510000" />
+      <workItem from="1695800823864" duration="717000" />
+      <workItem from="1695801595781" duration="5995000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -196,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695742457026</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1695742582096</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695742582096</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +222,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
